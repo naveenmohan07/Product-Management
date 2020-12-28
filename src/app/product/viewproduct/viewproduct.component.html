@@ -1,0 +1,36 @@
+<app-spinner *ngIf="spinner"></app-spinner>
+<div class="row">
+    <div class="col-sm-7">
+        <a routerLink="/home"><mat-icon class="icon">navigate_before</mat-icon>back</a>
+    </div>
+    <div class="col-sm-5">
+        <form (submit)="check(f)" #f="ngForm">
+            <mat-form-field>
+                <input type="text" matInput name="productname" placeholder="Product_Name" ngModel #productname="ngModel"/>
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </form>
+        <!-- <button mat-raised-button color="primary" (click)="close()"><mat-icon>close</mat-icon>Cancel Search</button> -->
+        <button mat-raised-button color="primary" (click)="generatexml()"><mat-icon>download</mat-icon>Generate_Report</button>
+    </div>
+</div><hr>
+<div *ngIf="checked">
+    <h4><b>Total Product</b> : {{ products.length }} </h4>
+    <mat-card *ngIf="products.length==0">
+        <p>Please add product to view</p>
+        <a routerLink="/addproduct">Add Product</a>
+    </mat-card>
+    <mat-accordion multi="true">
+        <mat-expansion-panel *ngFor="let product of products">
+            <mat-expansion-panel-header>
+                <h2>{{ product.productname }}</h2>
+            </mat-expansion-panel-header>
+            <p><strong>Product Modelno</strong> : {{ product.productmodel }}</p>
+            <p><strong>Product Quantity</strong> : {{ product.productqty }}</p>
+            <p><strong>Product Amount</strong> : {{ product.productamt }}</p>
+            <p><strong>Product Refilled on</strong> : {{ product.productdate }}</p>
+            <p><strong>Product Description</strong> : {{ product.productdesc }}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+   

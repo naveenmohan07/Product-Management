@@ -1,0 +1,23 @@
+<!-- <app-spinner *ngIf="spinner"></app-spinner> -->
+<a routerLink="/home"><mat-icon>arrow_left_alt</mat-icon></a>
+<mat-card color="accent">
+<mat-card-header><p class="lead">Add new Employee</p></mat-card-header><hr>
+    <div class="container">
+        <form (submit)="addUser(f)" #f="ngForm">
+            <div class="row">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Username" ngModel name="username" #username="ngModel"  required />
+                    <mat-error>Please enter valid Username</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <input type="email" matInput placeholder="Email-Id" ngModel name="mail" #mail="ngModel" required />
+                    <mat-error>Please enter valid Maild</mat-error>
+                    <mat-hint align="end">Mail will sent to this id</mat-hint>
+                </mat-form-field>
+            </div>
+            <button mat-stroked-button>Create User</button>
+        </form>
+    </div>
+</mat-card>

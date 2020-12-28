@@ -1,0 +1,88 @@
+<mat-card>
+    <mat-progress-bar value="40"></mat-progress-bar>
+    <mat-card-header>Employee Info</mat-card-header>
+    <form (submit)="userdata(f)" #f="ngForm">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <input type="text" matInput placeholder="Username"  ngModel name="username" #username="ngModel" required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+                <mat-label>Gender</mat-label>
+                <mat-radio-group >
+                    <mat-radio-button value="Male">Male</mat-radio-button>
+                    <mat-radio-button value="Female">Female</mat-radio-button>
+                </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <input type="tel" matInput placeholder="Mobile number" ngModel name="phoneno" #phoneno="ngModel" required/>
+                <mat-hint align="end">Count {{ phoneno.value.length }}</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <input type="email" matInput placeholder="Emial" ngModel name="email" #email="ngModel" required/>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-horizontal-stepper>
+                <mat-step >
+                    <mat-form-field appearance="outline">
+                        <input type="number" matInput placeholder="Door number" ngModel name="doorno" #doorno="ngModel" />
+                    </mat-form-field>
+                    <ng-template matStepLabel>
+                        Door_number
+                    </ng-template>
+                </mat-step>
+                <mat-step>
+                    <mat-form-field appearance="outline">
+                        <input type="text" matInput placeholder="Street" ngModel name="street" #street="ngModel" />
+                    </mat-form-field>
+                    <ng-template matStepLabel>
+                        Street
+                    </ng-template>
+                    <button mat-raised-button matStepperPrevious>Back</button>
+                </mat-step>
+                <mat-step>
+                    <mat-form-field appearance="outline">
+                        <input type="text" matInput placeholder="City" ngModel name="city" #city="ngModel" />
+                    </mat-form-field>
+                    <ng-template matStepLabel>
+                        City
+                    </ng-template>
+                    <button mat-raised-button matStepperPrevious>Back</button>                </mat-step>
+                <mat-step >
+                    <mat-form-field appearance="outline">
+                        <input type="text" matInput placeholder="District" ngModel name="district" #district="ngModel" />
+                    </mat-form-field>
+                    <ng-template matStepLabel>
+                        District
+                    </ng-template>
+                    <button mat-raised-button matStepperPrevious>Back</button>                </mat-step>
+                <mat-step >
+                    <mat-form-field appearance="outline">
+                        <input type="number" matInput placeholder="PinCode" ngModel name="pin" #pin="ngModel" />
+                    </mat-form-field>
+                    <ng-template matStepLabel>
+                        Pin_code
+                    </ng-template>
+                    <mat-icon>verified</mat-icon>
+                </mat-step>
+            </mat-horizontal-stepper>
+         </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Designation</mat-label>
+            <mat-select ngModel name="product" #product="ngModel">
+                <mat-option value="Sales_Manager">Sales_Manager</mat-option>
+                <mat-option value="Accotant">Accotant</mat-option>
+                <mat-option value="Mechanic">Mechanic</mat-option>
+                <mat-option value="Watchman">Watchman</mat-option>
+                <mat-option value="Sweeper">Sweeper</mat-option>
+            </mat-select   >
+        </mat-form-field>
+        </div>
+        <button mat-raised-button >Submit</button>
+    </form>
+</mat-card>

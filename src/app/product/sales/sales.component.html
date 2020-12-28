@@ -1,0 +1,104 @@
+<!-- <div class="container"> -->
+    <mat-card class="main">
+        <div class="row">
+            <div class="col-9">
+                Sales Compartment
+            </div>
+            <div class="col-3">
+                <p class="time">Date:{{systemdate}}</p>
+                <p class="time">Time:{{systemhour}}:{{systemmin}}:<span class="sec">{{systemsec}}</span></p>
+            </div>
+        </div><hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Signedin as</mat-label>
+                        <input type="text" matInput value="{{ username }}" disabled />
+                        <mat-icon matPrefix>person</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <div class="row">
+                    <div class="col-8">
+                      <mat-form-field>
+                        <input type="text" matInput placeholder="Enter Customer Name" />
+                      </mat-form-field>
+                    </div>
+                    <div class="col-3">
+                      <mat-form-field appearance="outline"  *ngIf="cartArray.length!=0">
+                        <mat-label>BillNumber</mat-label>
+                        <input type="text" matInput  value="{{ result }}" disabled/>
+                    </mat-form-field>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>   
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="prod">
+              <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                      <th>Product_Name</th>
+                      <th>Product_Model</th>
+                      <th>Quantity</th>
+                      <th>Amount</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                      <tbody>
+                        <tr *ngFor="let a of produc">
+                            <td>{{ a.productname }}</td>
+                            <td>{{ a.productmodel }}</td>
+                            <td>{{ a.productqty }}</td>
+                            <td>{{ a.productamt | currency:'INR'}}</td>
+                            <td><a (click)="addCart(a)"><mat-icon>add_shopping_cart</mat-icon></a></td>
+                        </tr>
+                      </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="prod">
+              <mat-card class="cartcard">
+                <p *ngIf="cartArray.length==0">Your Cart is empty</p>
+                <table class="cart">
+                  <thead *ngIf="cartArray.length!==0">
+                      <th>Product_Name</th>
+                      <th>Product_Model</th>
+                      <th>Quantity</th>
+                      <th>Amount</th>
+                      <th>Total</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let x of cartArray">
+                      <td>{{ x.productname }}</td>
+                      <td>{{ x.productmodel }}</td>
+                      <td><input type="number" class="form-control" (change)="addamount($event)"/></td>
+                      <td>{{ x.productamt }}</td>
+                      <td >{{ x.producttot }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-card>
+            </div>
+          </div>
+          
+        </div> <hr>
+        <div class="row">
+          <div class="col-6">
+
+          </div>
+          <div class="col-4">
+            <p>Total <b>{{ sum | currency:'INR'}}</b></p>
+          </div>
+          <div class="col-2">
+            <button mat-raised-button color="primary" (click)="openDialog()">View Invoice</button>
+          </div>
+        </div>
+        
+    </mat-card>
+<!-- </div> -->

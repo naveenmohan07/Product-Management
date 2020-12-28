@@ -1,0 +1,18 @@
+<mat-card>
+    <div class="row">
+        <div class="col-sm-2">
+            <a (click)="press()" class="active" routerLink="/signup">Signup</a>
+        </div> <span>|</span>
+         <div class="col-sm-2">
+            <a (click)="press()" routerLink="/signin">Signin</a>
+        </div><span>|</span>
+        <div class="col-sm-1">
+            <a (click)="press()" routerLink="/viewproduct">Guest</a>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <p *ngIf="hide">Please Login/Signup<br><img src="https://softwarebazar.in/wp-content/uploads/2017/04/Auto-300x300.jpg" class="center"></p>
+        <div class="container"><router-outlet></router-outlet></div>
+    </div>
+</mat-card>

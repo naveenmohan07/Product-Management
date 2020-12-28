@@ -1,0 +1,56 @@
+<mat-expansion-panel *ngFor="let user of userdetails" multi="true">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ user.username }}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <table>
+        <tr>
+            <td>MailID</td>
+            <td>:</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td>:</td>
+            <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>:</td>
+            <td>{{ user.gender }}</td>
+        </tr>
+        Address
+        <tr>
+            <td>Door Number</td>
+            <td>:</td>
+            <td>{{ user.door }}</td>
+        </tr>
+        <tr>
+            <td>Street Name</td>
+            <td>:</td>
+            <td>{{ user.street }}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>:</td>
+            <td>{{ user.city }}</td>
+        </tr>
+        <tr>
+            <td>District</td>
+            <td>:</td>
+            <td>{{ user.district }}</td>
+        </tr>
+        <tr>
+            <td>Pin Code</td>
+            <td>:</td>
+            <td>{{ user.pin }}</td>
+        </tr>
+        <tr>
+            <td>Product</td>
+            <td>:</td>
+            <td>{{ user.product }}</td>
+        </tr>
+    </table>
+    <p>Created on:<b>{{user.timestamp}}</b></p>
+</mat-expansion-panel>

@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <img src="https://softwarebazar.in/wp-content/uploads/2017/04/Auto-300x300.jpg" class="brand-img"/><a routerLink="/home"></a> <p class="brand">Popular Traders</p>
+    <span class="spacer"></span>
+    <span><a (click)="logout()" *ngIf="authenticated">Logout</a></span>
+    <span><mat-menu #appMenu="matMenu" color="primary">
+      <button mat-menu-item routerLink="/home">Dashboard</button>
+        <button mat-menu-item routerLink="/userprofile">Profile</button>
+        <button mat-menu-item>Contact</button>
+        <button mat-menu-item routerLink="/help">Help</button>
+      </mat-menu>
+      
+      <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="authenticated">
+        <mat-icon>more_vert</mat-icon>
+      </button></span>
+</mat-toolbar>
+<!-- <div class="container"> -->
+    <div class="col-md">
+        <router-outlet></router-outlet>
+    </div>
+<!-- </div> -->

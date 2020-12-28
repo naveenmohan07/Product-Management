@@ -1,0 +1,44 @@
+<!-- <app-spinner *ngIf="spinner"></app-spinner> -->
+<form (submit)="onSignup(f)" #f="ngForm" >
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline" color="primary">
+                <input type="text" matInput ngModel name="username" #username="ngModel" required />
+                <mat-error>Please enter valid data</mat-error>
+                <mat-icon matPrefix>person</mat-icon>
+                <mat-label>Username</mat-label>
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <b>Welcome</b>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <input type="email" matInput ngModel name="email" #email="ngModel" required/>
+                <mat-error >Please enter valid data</mat-error>
+                <mat-icon matPrefix>work</mat-icon> 
+                <mat-label>Mail I'd</mat-label>
+            </mat-form-field>
+        </div>
+            <div class="col-3">
+                <p>Here You Go..!!</p>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <input type="password" matInput ngModel name="password" #password="ngModel" required/>
+                <mat-error>Please enter valid data</mat-error>
+                <mat-icon matPrefix>person</mat-icon>
+                <mat-label>Password</mat-label>
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <p>Create a Account to Cherish you Carrear</p>
+        </div>
+    </div>
+    <button mat-raised-button >Signup</button>
+</form>

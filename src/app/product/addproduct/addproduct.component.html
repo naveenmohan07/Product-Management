@@ -1,0 +1,57 @@
+<!-- <app-spinner *ngIf="spinner"></app-spinner> -->
+<a routerLink="/home">back</a>
+<p>***__Add Product Details here__***</p>
+<mat-card>
+    <form (submit)="addproduct(f)" #f="ngForm">
+     <div class="container-fluid">
+        <div class="row">
+            <mat-form-field>
+                <input type="text" matInput name="productname" placeholder="Product_Name" ngModel  #productname="ngModel" required/>
+                <mat-error >Please enter correct value</mat-error>
+            </mat-form-field>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Product_Model" name="productmodel" ngModel #productmodel="ngModel" required />
+                    <mat-error >Please enter correct value</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <input type="number" matInput placeholder="Product_Quantity" name="productqty" ngModel #productqty="ngModel" required/>
+                <mat-error >Please enter correct value</mat-error>
+            </mat-form-field>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input type="date" matInput placeholder="Date_of_Added" name="productdate" ngModel #productdate="ngModel" required/>
+                    <mat-error>Please enter correct value</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <mat-form-field apperrance="outline"> 
+                <mat-label>Description</mat-label>
+                <textarea matInput name="productdesc" ngModel #productdesc="ngModel" required></textarea>
+                <mat-error>Please enter correct value</mat-error>
+            </mat-form-field>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Product_Amount" name="productamt" ngModel #productamt="ngModel" required/>
+                    <mat-error >Please enter correct value</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="btn">
+                <button mat-raised-button color="primary" [disabled]="f.invalid">Add</button> |
+                <button mat-raised-button color="warn">Clear</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</mat-card>
+<!-- <button mat-icon-button><mat-icon>delete_outline</mat-icon></button> -->
+
+

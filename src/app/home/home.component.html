@@ -1,0 +1,118 @@
+<!-- <div class="container"> -->
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <div class="sidenav">
+                <div class="sidenav-body">
+                    <ul class="sidenav-items"><br>
+                        <li>
+                            <b>Welcome</b>,  {{ namew }}
+                        </li><br>
+                        <a routerLink="/adduser">
+                            <li>
+                                <mat-icon>inbox</mat-icon>
+                                <p>Register</p>
+                            </li>
+                        </a><hr>
+                        <a routerLink="/addproduct">
+                            <li>
+                                <mat-icon>inbox</mat-icon>
+                                <p>Add_Product</p>
+                            </li>
+                        </a><hr>
+                        <a routerLink="/viewproduct">
+                            <li>
+                                <mat-icon>inbox</mat-icon>
+                                <p>View_Product</p>
+                            </li>
+                        </a><hr>
+                        <a routerLink="/sales">
+                            <li>
+                                <mat-icon>inbox</mat-icon>
+                                <p>Sales</p>
+                            </li>
+                        </a><hr>
+                    </ul>
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-toolbar>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              <mat-icon mat-button (click)="drawer.toggle()">menu</mat-icon>
+            </button>
+            <p class="greeting">
+                <b>Welcome</b>,  {{ namew }}
+            </p>
+          </mat-toolbar>
+          <hr>
+          <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a routerLink="/adduser">
+                        <mat-card class="box">
+                            <div class="row">
+                                <mat-icon class="card-icon">support_agent</mat-icon>
+                                <p class="card-content">Employee <span><b>{{ count }}</b></span></p> 
+                            </div>
+                        </mat-card>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a routerLink="/adduser">
+                        <mat-card class="box2">
+                            <div class="row">
+                                <mat-icon class="card-icon">support_agent</mat-icon>
+                                <p class="card-content">Product <span><b> {{ a }} </b></span></p>
+                            </div>
+                        </mat-card>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a routerLink="/sales">
+                        <mat-card class="box">
+                            <div class="row">
+                                <mat-icon class="card-icon">attach_money</mat-icon>
+                                <p class="card-content">Sales</p>
+                            </div>
+                        </mat-card>
+                    </a>
+                </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="col-8">
+                <mat-card class="chart-card">
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="card-head">
+                                Overview
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <input type="file" (change)="onFileChange($event)" class="form-control-file" multiple="false"/>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="chart">
+                    <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType">
+                    </canvas>
+                  </div>
+                </mat-card>        
+            </div>
+            <div class="col-1">
+                <mat-card class="logger">
+                    <p class="card-head">
+                        User Activity
+                    </p><hr>
+                    <p *ngFor="let x of users">
+                        {{ x.username }} <span> {{ x.timestamp |trim }} </span>
+                    </p>    
+                </mat-card>
+            </div>
+        </div>
+      </mat-drawer-container>
+

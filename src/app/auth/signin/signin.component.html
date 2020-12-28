@@ -1,0 +1,33 @@
+<app-spinner *ngIf="spinner"></app-spinner>
+<app-alert [error]="err" *ngIf="err" ></app-alert>
+<form (submit)="onSignin(f)" #f="ngForm" >
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Your mail i'd" ngModel name="email" #email="ngModel" required/>
+                <mat-error>Please enter valid data</mat-error>
+                <mat-icon matPrefix>person</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <b>Yoo.!!<mat-icon>home</mat-icon></b>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="*****" ngModel name="password" #password="ngModel" required/>
+                <mat-error>Please enter valid data</mat-error>
+                <mat-icon matPrefix>lock</mat-icon>
+            </mat-form-field>
+        </div>
+            <div class="col-3">
+                <p>Sign in to lead the world</p>
+            </div>
+    </div>
+    <button mat-raised-button >Signin</button>
+    
+</form>
