@@ -3,7 +3,7 @@ exports.sendmail=(result=>{
 	const sgMail = require('@sendgrid/mail')
 	sgMail.setApiKey('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');
 	const msg = {
-	to: 'naveenmsj@gmail.com', // Change to your recipient
+	to: result.mailid, // Change to your recipient
 	from: 'naveenkumarm.17it@kongu.edu', // Change to your verified sender
 	subject: 'Fill the details.',
 	text: 'Welcome to NS Traders '+result.username+'...!!!',
