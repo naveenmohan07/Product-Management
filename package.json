@@ -47,7 +47,7 @@
     "ts-xlsx": "0.0.11",
     "tslib": "^1.14.1",
     "validator": "^13.1.1",
-    "xlsx": "^0.16.9",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
